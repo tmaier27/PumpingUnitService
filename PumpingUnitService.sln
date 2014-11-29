@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumpingUnitService", "PumpingUnitService\PumpingUnitService.csproj", "{3BD7F983-884D-4164-8D67-CF884DE8BC82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumpingUnitService.Tests", "PumpingUnitService.Tests\PumpingUnitService.Tests.csproj", "{D2622388-3099-4698-B861-4D2E2E8E3562}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{BE8F8BBC-1500-4C40-9631-3AA05006AE72}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{5E03C6DE-7588-41C0-B753-21204304B748}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\PumpingUnitService-WAWS-dev.json = PublishScripts\Configurations\PumpingUnitService-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AB644B2A-7306-4662-A358-71C3E222AF02}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BD7F983-884D-4164-8D67-CF884DE8BC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD7F983-884D-4164-8D67-CF884DE8BC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD7F983-884D-4164-8D67-CF884DE8BC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD7F983-884D-4164-8D67-CF884DE8BC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2622388-3099-4698-B861-4D2E2E8E3562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2622388-3099-4698-B861-4D2E2E8E3562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2622388-3099-4698-B861-4D2E2E8E3562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2622388-3099-4698-B861-4D2E2E8E3562}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E03C6DE-7588-41C0-B753-21204304B748} = {BE8F8BBC-1500-4C40-9631-3AA05006AE72}
+	EndGlobalSection
+EndGlobal
