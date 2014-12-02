@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Breeze.ContextProvider.EF6;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,28 +7,29 @@ using System.Threading.Tasks;
 
 namespace PumpingUnitService.Models
 {
-   public class Repository : PumpingUnitService.Models.IRepository
+   public class Repository : IRepository
    {
-      private PumpingUnitServiceContext db;
+      //private PumpingUnitServiceContext db;
+      private readonly EFContextProvider<PumpingUnitServiceContext> _contextProvider = new EFContextProvider<PumpingUnitServiceContext>();
 
-      public Repository(PumpingUnitServiceContext db)
+      public string Metadata
       {
-         this.db = db;
+         get { return _contextProvider.Metadata(); }
       }
 
-      public IQueryable<PumpingUnit> GetAllPumpingUnits()
+      public Breeze.ContextProvider.SaveResult SaveChanges(Newtonsoft.Json.Linq.JObject saveBundle)
       {
-         return db.PumpingUnits;
+         return _contextProvider.SaveChanges(saveBundle);
       }
 
-      public IQueryable<PumpingUnitInspection> GetAllPumpingUnitInspections()
+      public IQueryable<PumpingUnit> PumpingUnits()
       {
-         return db.PumpingUnitInspections.Include("PumpingUnit");
+         return _contextProvider.Context.PumpingUnits;
       }
 
-      public IQueryable<PumpingUnitInspection> GetPumpingUnitInspectionsByPumpingUnit(int id)
+      public IQueryable<PumpingUnitInspection> PumpingUnitInspections()
       {
-         return db.PumpingUnitInspections.Include("PumpingUnit").Where(p => p.PumpingUnitId == id);
+         return _contextProvider.Context.PumpingUnitInspections;
       }
    }
 }
