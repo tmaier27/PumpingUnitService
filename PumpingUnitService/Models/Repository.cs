@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PumpingUnitService.Models
 {
-   public class Repository : IRepository
+   public class Repository : PumpingUnitService.Models.IRepository
    {
       private PumpingUnitServiceContext db;
 
@@ -19,24 +20,14 @@ namespace PumpingUnitService.Models
          return db.PumpingUnits;
       }
 
-      public IQueryable<PumpingUnit> GetAllPumpingUnitsWithInspections()
-      {
-         return db.PumpingUnits.Include("PumpingUnitInspections");
-      }
-
-      public PumpingUnit GetPumpingUnit(int id)
-      {
-         return db.PumpingUnits.FirstOrDefault(p => p.Id == id);
-      }
-
       public IQueryable<PumpingUnitInspection> GetAllPumpingUnitInspections()
       {
-         return db.PumpingUnitInspections;
+         return db.PumpingUnitInspections.Include("PumpingUnit");
       }
 
       public IQueryable<PumpingUnitInspection> GetPumpingUnitInspectionsByPumpingUnit(int id)
       {
-         return db.PumpingUnitInspections.Where(p => p.PumpingUnitId == id);
+         return db.PumpingUnitInspections.Include("PumpingUnit").Where(p => p.PumpingUnitId == id);
       }
    }
 }
