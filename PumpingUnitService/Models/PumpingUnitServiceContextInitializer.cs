@@ -46,7 +46,7 @@ namespace PumpingUnitService.Models
          {
             new PumpingUnitInspection()
             {
-               MotorSAPDataMatches = true, PumpingUnitSAPDataMatches = true, UnitOnUponArrival = false, PumpingUnit = pumpingUnits[1]
+               MotorSAPDataMatches = true, PumpingUnitSAPDataMatches = true, UnitOnUponArrival = false, PumpingUnit = pumpingUnits[1],
                InspectionItems = new List<PumpingUnitInspectionItem>()
                {
                   new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Defect, Type = InspectionType.GearboxGears, Condition = InspectionCondition.C, Comment = "Not looking good"},
@@ -57,13 +57,24 @@ namespace PumpingUnitService.Models
             },
             new PumpingUnitInspection()
             {
-               MotorSAPDataMatches = true, PumpingUnitSAPDataMatches = false, UnitOnUponArrival = true, PumpingUnit = pumpingUnits[4]
+               MotorSAPDataMatches = true, PumpingUnitSAPDataMatches = false, UnitOnUponArrival = true, PumpingUnit = pumpingUnits[4],
                InspectionItems = new List<PumpingUnitInspectionItem>()
                {
                   new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Defect, Type = InspectionType.TailBearings, Condition = InspectionCondition.D, Comment = "Turned off unit immediately. Attention required!"},
                   new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Defect, Type = InspectionType.Cranks, Condition = InspectionCondition.AB},
                   new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Lubricate, Type = InspectionType.CenterBearings, Condition = InspectionCondition.Yes, Comment = "Lubed bearings"},
                   new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Maintenance, Type = InspectionType.NoExcessGreaseOilOnUnit, Condition = InspectionCondition.Yes, Comment = "Cleaned off excess grease"}
+               }
+            },
+            new PumpingUnitInspection()
+            {
+               MotorSAPDataMatches = true, PumpingUnitSAPDataMatches = false, UnitOnUponArrival = true, PumpingUnit = pumpingUnits[4],
+               InspectionItems = new List<PumpingUnitInspectionItem>()
+               {
+                  new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Defect, Type = InspectionType.TailBearings, Condition = InspectionCondition.D, Comment = "Turned off unit immediately. Attention required!"},
+                  new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Defect, Type = InspectionType.Cranks, Condition = InspectionCondition.C},
+                  new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Lubricate, Type = InspectionType.CenterBearings, Condition = InspectionCondition.CompletedRepair, Comment = "Lubed bearings"},
+                  new PumpingUnitInspectionItem() { Category = InspectionTypeCategory.Maintenance, Type = InspectionType.NoExcessGreaseOilOnUnit, Condition = InspectionCondition.No, Comment = "Cleaned off excess grease"}
                }
             }
          };
