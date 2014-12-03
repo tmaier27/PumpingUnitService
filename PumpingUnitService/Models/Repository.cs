@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PumpingUnitService.Models
 {
-   public class Repository : PumpingUnitService.Models.IRepository
+   public class Repository : IRepository
    {
       private PumpingUnitServiceContext db;
 
