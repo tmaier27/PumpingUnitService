@@ -17,12 +17,13 @@ namespace PumpingUnitService.Models
 
       public IQueryable<PumpingUnit> GetAllPumpingUnits()
       {
-         return db.PumpingUnits;
+         return db.PumpingUnits.Include("Motor");
       }
 
       public IQueryable<PumpingUnitInspection> GetAllPumpingUnitInspections()
       {
-         return db.PumpingUnitInspections.Include("PumpingUnit");
+         //return db.PumpingUnitInspections.Include("PumpingUnit");
+         return db.PumpingUnitInspections;
       }
 
       public IQueryable<PumpingUnitInspection> GetPumpingUnitInspectionsByPumpingUnit(int id)

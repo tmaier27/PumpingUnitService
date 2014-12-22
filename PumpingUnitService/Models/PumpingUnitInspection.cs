@@ -9,7 +9,7 @@ namespace PumpingUnitService.Models
    {
       public PumpingUnitInspection()
       {
-         InspectionItems = new List<PumpingUnitInspectionItem>();
+         //InspectionItems = new List<PumpingUnitInspectionItem>();
       }
       public int Id { get; set; }
       public bool PumpingUnitSAPDataMatches { get; set; }
