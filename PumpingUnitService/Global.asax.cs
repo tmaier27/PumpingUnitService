@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
 using PumpingUnitService.Models;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace PumpingUnitService
 {
@@ -21,6 +22,7 @@ namespace PumpingUnitService
          FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
          RouteConfig.RegisterRoutes(RouteTable.Routes);
          BundleConfig.RegisterBundles(BundleTable.Bundles);
+         GlobalConfiguration.Configuration.AddJsonpFormatter();
       }
    }
 }
