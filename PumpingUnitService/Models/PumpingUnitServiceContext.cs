@@ -21,7 +21,6 @@ namespace PumpingUnitService.Models
 
         public DbSet<PumpingUnit> PumpingUnits { get; set; }
         public DbSet<PumpingUnitInspection> PumpingUnitInspections { get; set; }
-        //public DbSet<PumpingUnitInspectionItem> PumpingUnitInspectionItems { get; set; }
     
     }
 }
